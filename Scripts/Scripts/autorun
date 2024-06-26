@@ -1,0 +1,12 @@
+#!/bin/bash
+
+run() {
+  if ! pgrep -f "$1"; then
+    "$@" &
+  fi
+}
+
+run picom -b
+run feh --bg-fill ~/Pictures/Wallpapers/girl_silhoutte_window.jpg
+run nm-applet
+run copyq

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+stow alacritty bash tmux nvim i3 i3status xmonad picom Scripts Wallpapers cava

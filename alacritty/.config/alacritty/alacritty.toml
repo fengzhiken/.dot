@@ -1,0 +1,14 @@
+live_config_reload = true
+
+[window]
+opacity = 0.6
+
+[font]
+normal = { family = "JetbrainsMonoNerdFont", style = "Regular" }
+bold = { family = "JetbrainsMonoNerdFont", style = "Bold" }
+italic = { family = "JetbrainsMonoNerdFont", style = "Italic" }
+bold_italic = { family = "JetbrainsMonoNerdFont", style = "BoldItalic" }
+size = 7.5
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
