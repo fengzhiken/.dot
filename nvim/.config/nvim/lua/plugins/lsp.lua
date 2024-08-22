@@ -83,13 +83,23 @@ return {
           },
         },
       },
+      jdtls = {},
+      hls = {},
+      phpactor = {},
     }
 
     require("mason").setup()
 
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
+      "delve",
       "stylua",
+      "java-test",
+      "java-debug-adapter",
+      "ormolu",
+      "phpcs",
+      "php-cs-fixer",
+      "prettier",
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

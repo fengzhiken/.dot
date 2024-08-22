@@ -1,6 +1,29 @@
 return { -- Highlight, edit, and navigate code
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
+  dependencies = {
+    {
+      "windwp/nvim-ts-autotag",
+      config = function()
+        require("nvim-ts-autotag").setup({
+          opts = {
+            -- Defaults
+            enable_close = true, -- Auto close tags
+            enable_rename = true, -- Auto rename pairs of tags
+            enable_close_on_slash = false, -- Auto close on trailing </
+          },
+          -- Also override individual filetype configs, these take priority.
+          -- Empty by default, useful if one of the "opts" global settings
+          -- doesn't work well in a specific filetype
+          per_filetype = {
+            ["html"] = {
+              enable_close = false,
+            },
+          },
+        })
+      end,
+    },
+  },
   opts = {
     ensure_installed = {
       "bash",
@@ -32,6 +55,7 @@ return { -- Highlight, edit, and navigate code
       "scss",
       "php",
       "phpdoc",
+      "blade",
       "asm",
       "cmake",
       "comment",
@@ -69,5 +93,16 @@ return { -- Highlight, edit, and navigate code
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+
+    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
+    parser_config.blade = {
+      install_info = {
+        url = "https://github.com/EmranMR/tree-sitter-blade",
+        files = { "src/parser.c" },
+        branch = "main",
+      },
+      filetype = "blade",
+    }
   end,
 }

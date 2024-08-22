@@ -7,6 +7,7 @@ run() {
 }
 
 run picom -b
-run feh --bg-fill ~/Pictures/Wallpapers/girl_silhoutte_window.jpg
+run feh --bg-fill ~/Pictures/Wallpapers/arch-4k.jpg
 run nm-applet
 run copyq
+run fcitx5

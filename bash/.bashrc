@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-echo -ne '\e]11;#000000\e\\'  # set default foreground to black
+# echo -ne '\e]11;#000000\e\\'  # set default foreground to black
 echo -ne '\e]10;#00ff00\e\\'  # set default foreground to green
 
 alias ls='ls --color=auto'
