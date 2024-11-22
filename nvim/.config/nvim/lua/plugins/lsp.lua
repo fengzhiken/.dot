@@ -70,10 +70,10 @@ return {
 
     local servers = {
       clangd = {},
-      gopls = {},
+      -- gopls = {},
       pyright = {},
       rust_analyzer = {},
-      tsserver = {},
+      ts_ls = {},
       lua_ls = {
         settings = {
           Lua = {
@@ -84,7 +84,7 @@ return {
         },
       },
       jdtls = {},
-      hls = {},
+      -- hls = {},
       phpactor = {},
     }
 
@@ -92,12 +92,13 @@ return {
 
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
-      "delve",
+      -- "delve",
       "stylua",
       "java-test",
       "java-debug-adapter",
-      "ormolu",
+      -- "ormolu",
       "phpcs",
+      "phpcbf",
       "php-cs-fixer",
       "prettier",
     })
